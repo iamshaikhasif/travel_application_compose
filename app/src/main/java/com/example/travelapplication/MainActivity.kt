@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
         //hideSystem()
     }
 
-    fun hideSystem(){
+    /*fun hideSystem(){
         actionBar?.hide()
 
         WindowCompat.setDecorFitsSystemWindows(window, false)
@@ -49,5 +49,5 @@ class MainActivity : ComponentActivity() {
                 systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
             }
         }
-    }
+    }*/
 }

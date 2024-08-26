@@ -47,10 +47,9 @@ fun ExploreScreen() {
             modifier = Modifier.padding(10.dp)
         ) {
             Text(
-                text = "Let\'s\n\nenjoy the\n\nbeautiful\n\nworld.",
+                text = "Let\'s\n\n\n\nenjoy the\n\n\n\nbeautiful\n\n\n\nworld.",
                 color = Color.White,
-                fontSize = 70.sp,
-                fontWeight = FontWeight.Bold,
+                style = MaterialTheme.typography.bodyLarge.copy(fontSize = 70.sp)
             )
             Text(
                 text = "Find a place for travel,campaign,hiking. Relax and cherish your dreams to the fullest.",
