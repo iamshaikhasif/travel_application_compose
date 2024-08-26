@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TravelApplication</string>
+
+    <string name="unbookmark">unbookmark</string>
+    <string name="bookmark">bookmark</string>
+
+</resources>
