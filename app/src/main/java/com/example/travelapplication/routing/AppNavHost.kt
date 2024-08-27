@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.travelapplication.ui.explore_screen.ExploreScreen
+import com.example.travelapplication.ui.home.BottomNav
 
 
 @Composable
@@ -21,6 +22,9 @@ fun AppNavHost(
     ) {
         composable(NavigationItem.Explore.route) {
             ExploreScreen(navController)
+        }
+        composable(NavigationItem.Home.route) {
+            BottomNav(navController)
         }
     }
 }

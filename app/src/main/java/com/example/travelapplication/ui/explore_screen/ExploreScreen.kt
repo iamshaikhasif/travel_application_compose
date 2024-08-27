@@ -3,6 +3,7 @@ package com.example.travelapplication.ui.explore_screen
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -32,6 +33,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavHostController
+import com.example.travelapplication.routing.NavigationItem
 import com.example.travelapplication.ui.components.SwipeToContinue
 
 
@@ -79,6 +81,7 @@ fun ExploreScreen(navController: NavHostController,) {
             Spacer(Modifier.height(40.dp))
             SwipeToContinue() {
                 Log.d("Swipe", "Click")
+                navController.navigate(NavigationItem.Home.route)
             }
             Spacer(Modifier.height(20.dp))
             Text(

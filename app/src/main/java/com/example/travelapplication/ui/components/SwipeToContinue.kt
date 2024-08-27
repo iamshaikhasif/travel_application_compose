@@ -30,8 +30,8 @@ fun SwipeToContinue(onClick: () -> Unit) {
             .height(80.dp)
             .clip(shape = RoundedCornerShape(90.dp))
             .background(color = Color.Black.copy(alpha = 0.2f))
-            .clickable { onClick }
-            .padding(horizontal = 25.dp),
+            .padding(horizontal = 25.dp)
+            .clickable { onClick },
     ) {
         Box(
             contentAlignment = Alignment.CenterStart,
