@@ -1,5 +1,6 @@
 package com.example.travelapplication.ui.components
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -31,7 +32,7 @@ fun SwipeToContinue(onClick: () -> Unit) {
             .clip(shape = RoundedCornerShape(90.dp))
             .background(color = Color.Black.copy(alpha = 0.2f))
             .padding(horizontal = 25.dp)
-            .clickable { onClick },
+            .clickable { onClick() },
     ) {
         Box(
             contentAlignment = Alignment.CenterStart,
