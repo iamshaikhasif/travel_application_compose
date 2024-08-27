@@ -30,6 +30,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
+import com.example.travelapplication.ui.components.SwipeToContinue
 
 
 @Composable
@@ -40,7 +41,9 @@ fun ExploreScreen() {
                 painter = painterResource(id = R.drawable.splash_bg),
                 contentDescription = "bg image",
                 contentScale = ContentScale.Crop,
-                modifier = Modifier.fillMaxSize().padding(0.dp),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(0.dp),
             )
 
         Column(
@@ -72,35 +75,7 @@ fun ExploreScreen() {
                 fontSize = 16.sp,
             )
             Spacer(Modifier.height(40.dp))
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(80.dp)
-                    .clip(shape = RoundedCornerShape(90.dp))
-                    .background(color = Color.Black.copy(alpha = 0.2f))
-                    .padding(horizontal = 15.dp, vertical = 20.dp),
-            ) {
-                Box(
-                    modifier = Modifier
-                        .clip(shape = RoundedCornerShape(30.dp))
-                        .background(color = Color.White)
-                        .padding(horizontal = 20.dp, vertical = 10.dp),
-                ) {
-                    Icon(
-                        imageVector = Icons.Filled.KeyboardDoubleArrowRight,
-                        contentDescription = null
-                    )
-                }
-                Text(
-                    text = "Swipe to Explore Now",
-                    color = Color.White,
-                    fontSize = 16.sp,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .fillMaxHeight(),
-                )
-            }
+            SwipeToContinue()
             Spacer(Modifier.height(20.dp))
             Text(
                 text = "Privacy",
