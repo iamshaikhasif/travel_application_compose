@@ -47,7 +47,22 @@ fun ExploreScreen() {
             modifier = Modifier.padding(10.dp)
         ) {
             Text(
-                text = "Let\'s\n\n\n\nenjoy the\n\n\n\nbeautiful\n\n\n\nworld.",
+                text = "Let\'s",
+                color = Color.White,
+                style = MaterialTheme.typography.bodyLarge.copy(fontSize = 70.sp)
+            )
+            Text(
+                text = "enjoy the",
+                color = Color.White,
+                style = MaterialTheme.typography.bodyLarge.copy(fontSize = 70.sp)
+            )
+            Text(
+                text = "beautiful",
+                color = Color.White,
+                style = MaterialTheme.typography.bodyLarge.copy(fontSize = 70.sp)
+            )
+            Text(
+                text = "world.",
                 color = Color.White,
                 style = MaterialTheme.typography.bodyLarge.copy(fontSize = 70.sp)
             )
