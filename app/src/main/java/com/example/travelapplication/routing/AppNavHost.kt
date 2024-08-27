@@ -6,7 +6,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.travelapplication.ui.explore_screen.ExploreScreen
-import com.example.travelapplication.ui.home.BottomNav
+import com.example.travelapplication.ui.home.DashboardScreen
+import com.example.travelapplication.ui.home.FavScreen
+import com.example.travelapplication.ui.home.HomeScreen
+import com.example.travelapplication.ui.home.NotiScreen
 
 
 @Composable
@@ -23,8 +26,31 @@ fun AppNavHost(
         composable(NavigationItem.Explore.route) {
             ExploreScreen(navController)
         }
+        composable(NavigationItem.Dashboard.route) {
+            DashboardScreen(navController)
+        }
+    }
+}
+
+@Composable
+fun BottomNavHost(
+    modifier: Modifier = Modifier,
+    navController: NavHostController,
+    startDestination: String = NavigationItem.Home.route,
+) {
+    NavHost(
+        modifier = modifier,
+        navController = navController,
+        startDestination = startDestination
+    ) {
         composable(NavigationItem.Home.route) {
-            BottomNav(navController)
+            HomeScreen()
+        }
+        composable(NavigationItem.Favorite.route) {
+            FavScreen()
+        }
+        composable(NavigationItem.Notification.route) {
+            NotiScreen()
         }
     }
 }
