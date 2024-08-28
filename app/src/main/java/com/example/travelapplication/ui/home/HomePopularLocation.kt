@@ -117,7 +117,6 @@ fun CardItem() {
                             Icon(
                                 imageVector = Icons.Filled.Star,
                                 contentDescription = "bookmark",
-                                col
                                 modifier = Modifier.size(10.dp)
                             )
                             Text(
