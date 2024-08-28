@@ -2,7 +2,9 @@ package com.example.travelapplication.ui.home
 
 import android.util.Log
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -75,12 +77,13 @@ fun BottomItem(
                             launchSingleTop = true
                             restoreState = true
                         }
-                    }catch (e:Exception){
+                    } catch (e:Exception) {
                         Log.d("route", e.message ?: "no error")
                     }
                 },
                 icon = {
                     Icon(
+                        modifier = Modifier.size(35.dp),
                         imageVector = screen.icon,
                         contentDescription = "",
                         tint = if (currentRoute == screen.route) Color.Red else Color.White
