@@ -16,16 +16,22 @@ sealed class BottomItemModel(
         icon = Icons.Outlined.Home
     )
 
+    data object Explore : BottomItemModel(
+        route = NavigationItem.Explore.route,
+        title = "Explore",
+        icon = Icons.Outlined.Dashboard
+    )
+
     data object Favourite : BottomItemModel(
         route = NavigationItem.Favorite.route,
         title = "Favorite",
-        icon = Icons.Outlined.Favorite
+        icon = Icons.Outlined.FavoriteBorder
     )
 
     data object Notification : BottomItemModel(
-        route = NavigationItem.Notification.route,
-        title = "Notification",
-        icon = Icons.Outlined.Notifications
+        route = NavigationItem.Profile.route,
+        title = "Profile",
+        icon = Icons.Outlined.Person2
     )
 
 }

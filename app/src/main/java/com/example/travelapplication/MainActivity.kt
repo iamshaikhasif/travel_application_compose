@@ -7,10 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import androidx.navigation.compose.rememberNavController
-import com.example.travelapplication.routing.AppNavHost
 import com.example.travelapplication.ui.MainScreen
-import com.example.travelapplication.ui.explore_screen.ExploreScreen
 import com.example.travelapplication.ui.theme.TravelApplicationTheme
 
 class MainActivity : ComponentActivity() {

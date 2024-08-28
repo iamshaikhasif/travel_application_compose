@@ -3,6 +3,7 @@ package com.example.travelapplication.ui.home
 import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -19,6 +20,7 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -53,16 +55,16 @@ fun BottomItem(
     navController: NavHostController, modifier: Modifier = Modifier
 ) {
     val screens = listOf(
-        BottomItemModel.HomeScreen, BottomItemModel.Favourite, BottomItemModel.Notification
+        BottomItemModel.HomeScreen, BottomItemModel.Explore, BottomItemModel.Favourite, BottomItemModel.Notification
     )
 
-    NavigationBar(modifier = modifier, containerColor = Color.White) {
+    NavigationBar(modifier = modifier.padding(10.dp).clip(shape = RoundedCornerShape(20.dp)), containerColor = Color.Black) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
         screens.forEach { screen ->
             NavigationBarItem(
-                selected = currentRoute == screen.route,
+                selected = false,
                 onClick = {
                     try {
                         Log.d("route", screen.route)
@@ -81,7 +83,7 @@ fun BottomItem(
                     Icon(
                         imageVector = screen.icon,
                         contentDescription = "",
-                        tint = if (currentRoute == screen.route) Color.Red else Color.LightGray
+                        tint = if (currentRoute == screen.route) Color.Red else Color.White
                     )
                 },
                 colors = NavigationBarItemDefaults.colors(
