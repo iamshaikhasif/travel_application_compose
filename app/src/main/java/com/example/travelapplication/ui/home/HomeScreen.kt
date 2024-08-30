@@ -45,6 +45,8 @@ fun HomeScreen() {
         GapCompose(isRow = false)
         HomeSearchCompose()
         GapCompose(isRow = false)
+        PlaceCard()
+        GapCompose(isRow = false)
         HomePopularLocation()
     }
 }
