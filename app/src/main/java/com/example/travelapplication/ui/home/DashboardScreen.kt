@@ -60,7 +60,7 @@ fun BottomItem(
         BottomItemModel.HomeScreen, BottomItemModel.Explore, BottomItemModel.Favourite, BottomItemModel.Notification
     )
 
-    NavigationBar(modifier = modifier.padding(10.dp).clip(shape = RoundedCornerShape(20.dp)), containerColor = Color.Black) {
+    NavigationBar(modifier = modifier.height(90.dp).padding(10.dp).clip(shape = RoundedCornerShape(20.dp)), containerColor = Color.Black) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
@@ -83,7 +83,7 @@ fun BottomItem(
                 },
                 icon = {
                     Icon(
-                        modifier = Modifier.size(35.dp),
+                        modifier = Modifier.size(25.dp),
                         imageVector = screen.icon,
                         contentDescription = "",
                         tint = if (currentRoute == screen.route) Color.Red else Color.White

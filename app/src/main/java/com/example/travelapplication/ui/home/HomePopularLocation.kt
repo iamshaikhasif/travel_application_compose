@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -49,7 +50,7 @@ fun HomePopularLocation() {
         )
         GapCompose(isRow = false)
         LazyRow {
-            itemsIndexed(courseList) { index, item ->
+            items(count = 5) {  item ->
                 CardItem()
             }
         }
@@ -63,6 +64,7 @@ fun CardItem() {
             .height(200.dp)
             .width(150.dp)
             .background(Color.White)
+            .padding(5.dp)
     ) {
         Column {
             Box(
@@ -105,25 +107,45 @@ fun CardItem() {
                     contentAlignment = Alignment.BottomCenter,
                     modifier = Modifier
                         .width(150.dp)
-                        .padding(5.dp)
+                        .height(200.dp)
 
                 ) {
-                    Row(horizontalArrangement = Arrangement.SpaceBetween) {
+                    Row(
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        modifier = Modifier
+                            .width(150.dp)
+                            .clip(
+                                shape = RoundedCornerShape(
+                                    topStart = 0.dp,
+                                    topEnd = 0.dp,
+                                    bottomEnd = 10.dp,
+                                    bottomStart = 10.dp
+                                )
+                            )
+                            .background(Color.Black.copy(alpha = 0.3f))
+                            .padding(horizontal = 10.dp, vertical = 5.dp)
+                    ) {
                         Text(
                             text = "Place Name",
-                            style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold)
+                            style = MaterialTheme.typography.labelSmall.copy(
+                                color = Color.White,
+                                fontWeight = FontWeight.Bold
+                            )
                         )
-                        Row {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(
                                 imageVector = Icons.Filled.Star,
                                 contentDescription = "bookmark",
+                                tint = Color.White,
                                 modifier = Modifier.size(10.dp)
                             )
+                            Spacer(modifier = Modifier.width(5.dp))
                             Text(
                                 text = "5.0",
                                 style = MaterialTheme.typography.labelSmall.copy(
                                     fontSize = 10.sp,
-                                    fontWeight = FontWeight.Normal
+                                    fontWeight = FontWeight.Normal,
+                                    color = Color.White
                                 )
                             )
 
