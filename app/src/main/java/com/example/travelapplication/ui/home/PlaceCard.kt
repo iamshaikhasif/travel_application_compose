@@ -59,7 +59,7 @@ fun PlaceCardItem() {
                 Image(
                     painter = painterResource(id = R.drawable.splash_bg),
                     contentDescription = null,
-                    contentScale = ContentScale.Crop,
+                    contentScale = ContentScale.FillBounds,
                     modifier = Modifier
                         .width(150.dp)
                         .clip(shape = RoundedCornerShape(10.dp)),

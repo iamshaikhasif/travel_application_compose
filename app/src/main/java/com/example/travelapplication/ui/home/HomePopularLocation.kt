@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.travelapplication.R
 import com.example.travelapplication.ui.components.GapCompose
+import com.example.travelapplication.ui.components.TitleWithSeeAll
 
 @Composable
 fun HomePopularLocation() {
@@ -41,16 +42,10 @@ fun HomePopularLocation() {
     courseList = ArrayList<String>()
 
     Column {
-        Text(
-            text = "Popular Location",
-            style = MaterialTheme.typography.bodyLarge.copy(
-                fontSize = 25.sp,
-                fontWeight = FontWeight.Bold
-            )
-        )
+        TitleWithSeeAll(title = "Popular Location")
         GapCompose(isRow = false)
         LazyRow {
-            items(count = 5) {  item ->
+            items(count = 5) {
                 CardItem()
             }
         }
@@ -98,6 +93,7 @@ fun CardItem() {
                         Icon(
                             imageVector = Icons.Filled.BookmarkBorder,
                             contentDescription = "bookmark",
+                            tint = Color.Black,
                             modifier = Modifier.size(15.dp)
                         )
                     }
@@ -135,8 +131,8 @@ fun CardItem() {
                         Row(verticalAlignment = Alignment.CenterVertically) {
                             Icon(
                                 imageVector = Icons.Filled.Star,
-                                contentDescription = "bookmark",
-                                tint = Color.White,
+                                contentDescription = "star",
+                                tint = Color.Yellow,
                                 modifier = Modifier.size(10.dp)
                             )
                             Spacer(modifier = Modifier.width(5.dp))

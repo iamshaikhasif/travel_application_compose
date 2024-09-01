@@ -1,6 +1,7 @@
 package com.example.travelapplication.ui.home
 
 import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -40,6 +41,7 @@ import com.example.travelapplication.routing.NavigationItem
 fun DashboardScreen(navController: NavHostController) {
     val bottomNav = rememberNavController()
     Scaffold(
+        modifier = Modifier.background(Color.White),
         bottomBar = {
             BottomItem(navController = bottomNav, modifier = Modifier)
         }
@@ -57,10 +59,20 @@ fun BottomItem(
     navController: NavHostController, modifier: Modifier = Modifier
 ) {
     val screens = listOf(
-        BottomItemModel.HomeScreen, BottomItemModel.Explore, BottomItemModel.Favourite, BottomItemModel.Notification
+        BottomItemModel.HomeScreen,
+        BottomItemModel.Explore,
+        BottomItemModel.Favourite,
+        BottomItemModel.Notification
     )
 
-    NavigationBar(modifier = modifier.height(90.dp).padding(10.dp).clip(shape = RoundedCornerShape(20.dp)), containerColor = Color.Black) {
+    NavigationBar(
+        modifier = modifier
+            .height(90.dp)
+            .background(Color.White)
+            .padding(10.dp)
+            .clip(shape = RoundedCornerShape(20.dp)),
+        containerColor = Color.Black
+    ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
@@ -77,7 +89,7 @@ fun BottomItem(
                             launchSingleTop = true
                             restoreState = true
                         }
-                    } catch (e:Exception) {
+                    } catch (e: Exception) {
                         Log.d("route", e.message ?: "no error")
                     }
                 },
