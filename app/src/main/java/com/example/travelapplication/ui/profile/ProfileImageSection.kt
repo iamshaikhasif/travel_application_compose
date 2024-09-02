@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -34,13 +35,21 @@ import com.example.travelapplication.R
 
 @Composable
 fun ProfileImageSection() {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(20.dp)
-    ) {
-        ProfileImageBio()
-        FollowerDetails(modifier = Modifier.weight(1f))
+    Column {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(20.dp)
+        ) {
+            ProfileImageBio()
+            FollowerDetails(
+                modifier = Modifier
+                    .weight(1f)
+                    .height(60.dp)
+            )
+        }
+
+        ButtonProfile()
     }
 }
 
@@ -63,25 +72,6 @@ fun ProfileImageBio() {
                     .size(60.dp)
                     .clip(CircleShape)
             )
-            /*Box(
-                contentAlignment = Alignment.BottomEnd,
-                modifier = Modifier
-                    .size(60.dp)
-            ) {
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .size(15.dp)
-                        .clip(shape = RoundedCornerShape(90.dp))
-                        .background(Color.Black)
-                ) {
-                    Icon(
-                        imageVector = Icons.Filled.Edit,
-                        contentDescription = null,
-                        tint = Color.White
-                    )
-                }
-            }*/
         }
 
         Text(
@@ -99,13 +89,17 @@ fun ProfileImageBio() {
 
 @Composable
 fun FollowerDetails(modifier: Modifier) {
-    Row(horizontalArrangement = Arrangement.Center, verticalAlignment =  Alignment.CenterVertically, modifier = modifier) {
+    Row(
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier
+    ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
                 text = "130",
-                style = MaterialTheme.typography.labelMedium
+                style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Medium)
             )
             Text(
                 text = "Post",
@@ -119,7 +113,7 @@ fun FollowerDetails(modifier: Modifier) {
         ) {
             Text(
                 text = "130",
-                style = MaterialTheme.typography.labelMedium
+                style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Medium)
             )
             Text(
                 text = "Post",
@@ -133,12 +127,59 @@ fun FollowerDetails(modifier: Modifier) {
         ) {
             Text(
                 text = "130",
-                style = MaterialTheme.typography.labelMedium
+                style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Medium)
             )
             Text(
                 text = "Post",
                 style = MaterialTheme.typography.labelSmall.copy(
                     fontWeight = FontWeight.Normal
+                )
+            )
+        }
+    }
+}
+
+@Composable
+fun ButtonProfile() {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 10.dp)
+    ) {
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .height(35.dp)
+                .weight(1f)
+                .clip(shape = RoundedCornerShape(10.dp))
+                .background(color = Color.Gray)
+
+        ) {
+            Text(
+                text = "Edit profile",
+                style = MaterialTheme.typography.labelLarge.copy(
+                    fontWeight = FontWeight.Medium,
+                    color = Color.White
+                )
+            )
+        }
+
+        Spacer(modifier = Modifier.width(10.dp))
+
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
+                .height(35.dp)
+                .weight(1f)
+                .clip(shape = RoundedCornerShape(10.dp))
+                .background(color = Color.Gray)
+
+        ) {
+            Text(
+                text = "Follow",
+                style = MaterialTheme.typography.labelLarge.copy(
+                    fontWeight = FontWeight.Medium,
+                    color = Color.White
                 )
             )
         }
