@@ -10,7 +10,7 @@ import com.example.travelapplication.ui.home.DashboardScreen
 import com.example.travelapplication.ui.home.ExploreScreen
 import com.example.travelapplication.ui.home.FavScreen
 import com.example.travelapplication.ui.home.HomeScreen
-import com.example.travelapplication.ui.home.NotiScreen
+import com.example.travelapplication.ui.profile.ProfileScreen
 
 
 @Composable
@@ -51,7 +51,7 @@ fun BottomNavHost(
             FavScreen()
         }
         composable(NavigationItem.Profile.route) {
-            NotiScreen()
+            ProfileScreen()
         }
         composable(NavigationItem.Explore.route) {
             ExploreScreen()
