@@ -42,7 +42,7 @@ import com.example.travelapplication.ui.components.TitleWithSeeAll
 @Composable
 fun RecommendationPlace() {
     Column {
-        TitleWithSeeAll(title = "Recommendation")
+        TitleWithSeeAll(title = "Best Deals")
         GapCompose(isRow = false)
         LazyColumn() {
             items(count = 5) {
