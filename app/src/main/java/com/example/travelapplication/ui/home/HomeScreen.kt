@@ -78,11 +78,6 @@ fun FavScreen() {
 }
 
 @Composable
-fun NotiScreen() {
-    Text(text = "Noti")
-}
-
-@Composable
 fun ExploreScreen() {
     Text(text = "Exp")
 }
