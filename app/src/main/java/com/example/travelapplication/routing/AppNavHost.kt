@@ -5,9 +5,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.travelapplication.ui.explore_screen.ExploreScreen
 import com.example.travelapplication.ui.welcome_screen.WelcomeScreen
 import com.example.travelapplication.ui.home.DashboardScreen
-import com.example.travelapplication.ui.home.ExploreScreen
 import com.example.travelapplication.ui.home.FavScreen
 import com.example.travelapplication.ui.home.HomeScreen
 import com.example.travelapplication.ui.profile.ProfileScreen

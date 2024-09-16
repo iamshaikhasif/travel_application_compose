@@ -76,8 +76,3 @@ private fun HomePrev() {
 fun FavScreen() {
     Text(text = "Fav")
 }
-
-@Composable
-fun ExploreScreen() {
-    Text(text = "Exp")
-}
