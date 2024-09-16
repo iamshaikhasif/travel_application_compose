@@ -42,7 +42,7 @@ fun HomePopularLocation() {
     courseList = ArrayList<String>()
 
     Column {
-        TitleWithSeeAll(title = "Popular Location")
+        TitleWithSeeAll(title = "Popular Destinations")
         GapCompose(isRow = false)
         LazyRow {
             items(count = 5) {
