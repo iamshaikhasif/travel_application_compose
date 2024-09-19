@@ -27,7 +27,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.travelapplication.ui.components.CommonEditText
 import com.example.travelapplication.ui.components.GapCompose
 
 @Composable
@@ -76,7 +75,6 @@ fun HomeSearchCompose() {
                     modifier = Modifier.padding(0.dp),
                     style = MaterialTheme.typography.labelSmall.copy(color = Color.Gray)
                 )
-
             }
 
         }
